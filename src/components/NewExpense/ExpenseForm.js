@@ -23,12 +23,16 @@ const ExpenseForm = (props) => {
       'id': Math.random(),
       'title': title,
       'price': price,
-      'date': new Date(date)
+      'date': new Date(date + "T00:00")
     }
     props.createNewExpense(new_expense)
     setDate("")
     setPrice("")
     setTitle("")
+  }
+
+  const cancelExpense = (event) => {
+
   }
 
   return (
@@ -53,6 +57,7 @@ const ExpenseForm = (props) => {
       </div>
 
       <div className="new-expense__actions">
+        <button onClick={cancelExpense}>Cancel</button>
         <button type="submit">Submit Expense</button>
       </div>
 

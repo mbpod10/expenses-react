@@ -9,8 +9,9 @@ const App = () => {
 
   const createNewExpenseParent = (expense) => {
     // sent down to NewExpense as prop
-    console.log(expense)
-    setData([...data2, expense])
+    setData((prevState) => {
+      return [expense, ...prevState]
+    })
   }
 
   return (
