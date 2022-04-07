@@ -5,7 +5,7 @@ import ExpenseForm from './ExpenseForm'
 const NewExpense = (props) => {
 
   const createNewExpense = (expense) => {
-    // console.log(expense)
+    // comes from props from App.js
     props.createNewExpenseParent(expense)
   }
 

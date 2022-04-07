@@ -4,19 +4,16 @@ import "./ExpenseForm.css"
 const ExpenseForm = (props) => {
 
   const [title, setTitle] = useState("")
-  const [price, setPrice] = useState(0.01)
-  const [date, setDate] = useState("mm/dd/yyyy")
+  const [price, setPrice] = useState("")
+  const [date, setDate] = useState("")
 
   const titleChangeHandler = (event) => {
-    console.log('title', event.target.value)
     setTitle(event.target.value)
   }
   const priceChangeHandler = (event) => {
-    console.log('price', event.target.value)
     setPrice(event.target.value)
   }
   const dateChangeHandler = (event) => {
-    console.log('date', event.target.value)
     setDate(event.target.value)
   }
 
@@ -28,19 +25,20 @@ const ExpenseForm = (props) => {
       'price': price,
       'date': new Date(date)
     }
-
     props.createNewExpense(new_expense)
-    setDate("mm/dd/yyyy")
-    setPrice(0.01)
+    setDate("")
+    setPrice("")
     setTitle("")
   }
 
   return (
     <form onSubmit={onSubmitHandler}>
+
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
-          <input type='text' onChange={titleChangeHandler} value={title} />
+          <input type='text' onChange={titleChangeHandler} value={title}
+          />
         </div>
 
         <div className="new-expense__control">
@@ -57,6 +55,7 @@ const ExpenseForm = (props) => {
       <div className="new-expense__actions">
         <button type="submit">Submit Expense</button>
       </div>
+
     </form>
   )
 }

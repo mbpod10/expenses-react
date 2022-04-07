@@ -3,11 +3,12 @@ import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 import data from './data'
 
-function App() {
+const App = () => {
 
   const [data2, setData] = useState(data)
 
   const createNewExpenseParent = (expense) => {
+    // sent down to NewExpense as prop
     console.log(expense)
     setData([...data2, expense])
   }

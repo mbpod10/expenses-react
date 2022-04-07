@@ -11,12 +11,12 @@ const expenses = [
     'title': 'Dog Sitting',
     'price': 60.00
   },
-  // {
-  //   'id': 3,
-  //   'date': new Date(2021, 5, 13),
-  //   'title': 'Training Lessons',
-  //   'price': 48.00
-  // },
+  {
+    'id': 3,
+    'date': new Date(2021, 5, 13),
+    'title': 'Training Lessons',
+    'price': 48.00
+  },
   // {
   //   'id': 4,
   //   'date': new Date(2021, 1, 10),
@@ -38,7 +38,7 @@ const expenses = [
 ]
 
 const data = expenses.sort((element, index) => {
-  return element.date - index.date
+  return element.date + index.date
 })
 
 export default data
