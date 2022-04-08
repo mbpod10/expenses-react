@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 import data from './data'
+import ColorPicker from './components/UI/ColorPicker';
 
 const App = () => {
 
@@ -17,6 +18,7 @@ const App = () => {
   return (
     <div>
       <NewExpense createNewExpenseParent={createNewExpenseParent} />
+      <ColorPicker />
       <Expenses data={data2} />
     </div>
   );
